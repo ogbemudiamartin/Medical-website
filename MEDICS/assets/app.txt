@@ -1,0 +1,172 @@
+
+
+AOS.init({
+    duration: 3000,
+    once: true,
+});
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+
+const icon = document.querySelector(".fa-solid");
+const links = document.querySelector(".header-list");
+const background = document.querySelector(".body");
+ const iconss = document.querySelector(".fa-xmark")
+
+icon.addEventListener('click', ()=>{
+    links.classList.toggle("active");
+    icon.classList.toggle('fa-xmark')
+    background.classList.toggle("open");
+})
+
+iconss.addEventListener('click', ()=>{
+    iconss.classList.remove('active')
+    iconss.classList.remove('.open')
+})
+
+const form = document.querySelector('form')
+const names = document.getElementById('name');
+const Affilation = document.getElementById('Affilation');
+const email = document.getElementById('email');
+const number = document.getElementById('number');
+const Department = document.getElementById('Department');
+const date = document.getElementById('date');
+const Message = document.getElementById('Message');
+const output = document.querySelector('.output')
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    validateInputs();
+    sweetAlert()
+    
+});
+
+
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+
+
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success')
+}
+
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+
+    
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+};
+
+const isValidEmail = email => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+const validateInputs = () => {
+ 
+    const usernameValue = names.value.trim();
+    const emailValue = email.value.trim();
+    const AffilationValue = Affilation.value.trim();
+    const numberValue = number.value.trim();
+    const DepartmentValue = Department.value.trim();
+    const DateValue = date.value.trim();
+    const MessageValue = Message.value.trim();
+  
+    if(usernameValue === '') {
+        setError(names);
+    } else {
+        setSuccess(names);
+    }
+  
+    if(AffilationValue === '') {
+        setError(Affilation);
+    } else {
+        setSuccess(Affilation);
+    }
+  
+    if(numberValue < 6) {
+        setError(number);
+    } else {
+        setSuccess(number);
+    }
+  
+    if(DepartmentValue === '') {
+        setError(Department);
+    } else {
+        setSuccess(Department);
+    }
+    if(MessageValue === '') {
+        setError(Message);
+    } else {
+        setSuccess(Message);
+    }
+    if(DateValue === '') {
+        setError(Message);
+    } else {
+        setSuccess(Message);
+    }
+  
+    if(emailValue === '') {
+        setError(email)
+    } else if (!isValidEmail(emailValue)) {
+        setError(email);
+    } else {
+        setSuccess(email);
+    }
+}
+
+function sweetAlert(){
+    const alertSuccess = form.classList.contains('success')
+
+    if(alertSuccess){
+       Swal.fire({
+           position: 'top-end',
+           icon: 'success',
+           title: 'Your Appointment as been booked',
+           showConfirmButton: false,
+           timer: 2500
+         })
+   
+    }
+    else{
+       Swal.fire({
+           title: 'Are you sure?',
+           text: "You won't be able to revert this!",
+           icon: 'warning',
+           showCancelButton: true,
+           confirmButtonColor: '#3085d6',
+           cancelButtonColor: '#25b5b1'
+         }).then((result) => {
+           if (result.isConfirmed) {
+             Swal.fire(
+               'Deleted!',
+               'Your file has been deleted.',
+               'success'
+             )
+           }
+         })
+       // Swal.fire({
+       //     icon: 'error',
+       //     title: 'Oops...',
+       //     text: 'Something went wrong!',
+       //     cancelButtonColor: 'red'
+       //   })
+    }
+ 
+}
+
+function bookedAppointment(){
+  
+}
+    
+ 

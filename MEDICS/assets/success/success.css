@@ -1,0 +1,252 @@
+/* ------- Css  All Styles --------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    ;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+}
+
+:root {
+    --bg-white: #fff;
+    --btn: #25b5b1;
+    --bg-blue: #25b5b1;
+    --hover-btn: rgb(206, 83, 52);
+    --color: #222;
+    --body: rgb(245, 245, 245);
+}
+
+::selection {
+    color: #fff;
+    background-color: var(--btn);
+}
+
+input {
+    border: none;
+    filter: drop-shadow(1px 2px 1px rgb(222, 220, 220));
+}
+a{
+    color: #25b5b1;
+    font-weight: 600;
+    padding: 0rem .5rem;
+}
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 1.1rem;
+    font-size: medium;
+    text-transform: capitalize;
+    background-color: var(--bg-blue);
+    color: var(--bg-white);
+    transition: all ease 0.5s;
+}
+
+.btn:hover {
+    background-color: var(--hover-btn);
+}
+
+.btnx {
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 1.1rem;
+    font-weight: medium;
+    font-size: large;
+    text-transform: capitalize;
+    background-color: var(--color);
+    color: var(--bg-white);
+}
+
+/*
+   header styles
+*/
+
+header {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid #d4d2d2;
+}
+
+header .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* header .header-container img {} */
+
+header .header-container .header-list {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+header .header-container i {
+    font-size: 2rem;
+    color: gray;
+    cursor: pointer;
+    visibility: hidden;
+    position: relative;
+    left: 21rem;
+    z-index: 2;
+}
+
+header .header-container .header-list .actives {
+    color: var(--bg-blue);
+}
+
+header .header-container .header-list a {
+    color: var(--color);
+    padding: 0rem 1rem;
+    transition: ease 0.3s;
+}
+
+header .header-container .header-list a:hover {
+    color: var(--bg-blue);
+}
+
+header .header-container .btn {
+    padding: 1rem 2rem;
+}
+
+
+header{
+    width: 100%;
+    padding: 1rem;
+}
+header .header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* header .header-container img{
+
+} */
+header .header-container .header-list{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+header .header-container  i{
+    font-size: 2rem;
+    color: gray;
+    cursor: pointer;
+    visibility: hidden;
+    position: relative;
+    left: 21rem;
+    z-index: 2;
+}
+header .header-container .header-list  .actives{
+    color: var(--bg-blue);
+}
+header .header-container .header-list a{
+    color: var(--color);
+    padding: 0rem 1rem;
+    transition: ease 0.3s;
+}
+header .header-container .header-list a:hover{
+    color: var(--bg-blue);
+}
+ 
+header .header-container .btn{
+  padding: 1rem 2rem;
+}
+
+
+.nav {
+    width: 100%;
+    padding: 1rem;
+    color: #fff;
+    background-color: #25b5b1;
+}
+
+section{
+  margin: 10rem 22rem;
+}
+section .success_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d4d2d2;
+    border-radius: 5px;
+    padding: 2rem;
+    gap: .8rem;
+}
+
+section .success_container i{
+    border-radius: 100%;
+    border: none;
+    padding: 1rem;
+    background-color: #14dc14;
+    font-size: 3rem;
+    color: #fff;
+}
+
+section .success_container button{
+    background-color: #14dc14;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+
+
+   
+footer .container-f-end{
+    background-color:rgb(46, 50, 75);
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5rem;
+    padding-right: 8rem;
+    padding-bottom: 8rem;
+}
+
+footer.container-f-end .start{
+    line-height: 4rem;
+    font-weight: bold;
+}
+footer .container-f-end .start h2{
+    line-height: 3rem;
+    
+}
+.ico i{
+    color: var(--bg-white);
+    padding: .5rem;
+    cursor: pointer;
+}
+.ico i:hover{
+  color: var(--btn);
+}
+
+
+footer .container-f-end .list h1{
+    padding-bottom: 1rem;
+}
+footer .container-f-end .list ul{
+    line-height: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+footer .container-f-end .list ul li{
+   text-decoration: none;
+   list-style: none;
+}
+footer .container-f-end .list ul li:hover{
+    color: var(--bg-blue);
+}
+
+
